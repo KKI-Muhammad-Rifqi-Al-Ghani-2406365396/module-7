@@ -32,6 +32,10 @@ public class DataSeedService {
     private static final int NUMBER_OF_COURSE = 10;
 
     public void seedStudent() {
+        if (studentRepository.count() >= NUMBER_OF_STUDENTS) {
+            return;
+        }
+
         Faker faker = new Faker(new Locale("in-ID"));
 
         for (int i = 0; i < NUMBER_OF_STUDENTS; i++) {
