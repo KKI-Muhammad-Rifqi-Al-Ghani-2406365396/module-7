@@ -8,7 +8,12 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "students")
+@Table(
+        name = "students",
+        indexes = {
+                @Index(name = "idx_students_gpa", columnList = "gpa")
+        }
+)
 public class Student {
 
     @Id
